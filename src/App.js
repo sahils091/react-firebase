@@ -1,9 +1,11 @@
 import { Container } from "react-bootstrap";
 import "./App.css";
 import Signup from "./components/Signup";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
+    <AuthProvider>
     <div className="App">
       <Container
         className="d-flex align-items-center justify-content-center"
@@ -14,6 +16,7 @@ function App() {
         </div>
       </Container>
     </div>
+    </AuthProvider>
   );
 }
 
