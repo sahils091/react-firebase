@@ -9,6 +9,9 @@ const Signup = () => {
   const { signup, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -16,9 +19,11 @@ const Signup = () => {
       return setError("Passwords do not match");
     }
 
+    
     try {
       setError("");
       setLoading(true);
+      console.log(emailRef.current.value, passwordRef.current.value ,'Email and Password!')
       await signup(emailRef.current.value, passwordRef.current.value);
     } catch {
       setError("Failed to create an account");
@@ -32,7 +37,7 @@ const Signup = () => {
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
-          {currentUser && currentUser.email}
+          
           {error && <Alert variant="danger">{error}</Alert>}
 
           <Form onSubmit={handleSubmit}>
