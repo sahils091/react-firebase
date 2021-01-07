@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route}
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import PrivateRoute from "./components/PrivateRoute";
-import ForgotPassword from "./components/FOrgotPassword";
+import ForgotPassword from "./components/ForgotPassword";
 
 function App() {
   return (

@@ -38,6 +38,7 @@ const Login = () => {
           <h2 className="text-center mb-4">Log In</h2>
           
           {error && <Alert variant="danger">{error}</Alert>}
+          
 
 
           <Form onSubmit={handleSubmit}>
@@ -53,7 +54,7 @@ const Login = () => {
             <Button type="submit" className="w-100" disabled={loading}>
              Log-In
             </Button>
-            <div className="w-100 text-center mt-3"> Forgot Password? <Link to="forgotpassword"></Link>  </div>
+            <div className="w-100 text-center mt-3"> <Link to="/forgotpassword"> Forgot Password?</Link>  </div>
           </Form>
         </Card.Body>
       </Card>

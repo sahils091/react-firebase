@@ -18,6 +18,9 @@ function login(email, password) {
 function logout() {
   return auth.signOut()
 }
+function resetPassword(email) {
+  return auth.sendPasswordResetEmail(email);
+} 
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
@@ -36,7 +39,8 @@ export function AuthProvider({ children }) {
     currentUser,
     login,
     signup,
-    logout
+    logout, 
+    resetPassword
   };
   return (
     <AuthContext.Provider value={value}>
