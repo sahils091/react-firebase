@@ -12,15 +12,23 @@ function signup(email, password) {
 }
 
 function login(email, password) {
-  return auth.signInWithEmailAndPassword(email, password)
+  return auth.signInWithEmailAndPassword(email, password);
 }
 
 function logout() {
-  return auth.signOut()
+  return auth.signOut();
 }
 function resetPassword(email) {
   return auth.sendPasswordResetEmail(email);
-} 
+}
+
+function updateEmail(email) {
+  return auth.currentUser.updateEmail(email);
+}
+
+function updatePassword(password) {
+  return auth.currentUser.updatePassword(password);
+}
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
@@ -39,8 +47,10 @@ export function AuthProvider({ children }) {
     currentUser,
     login,
     signup,
-    logout, 
-    resetPassword
+    logout,
+    resetPassword,
+    updateEmail,
+    updatePassword,
   };
   return (
     <AuthContext.Provider value={value}>
